@@ -1,7 +1,7 @@
 Controller gains tuning is one of the most important parts of controller development. Gains are tuned by different algorithms. one of the popular algorithms is Fuzzy.
 This code is written for temperature control using an Adaptive type-II fuzzy - PID controller, specifically a DS18B20 sensor. It's worth mentioning that all components of the controller, have been manually implemented in this code without utilizing any pre-built functions, solely relying on fundamental commands of the C programming language. This controller was simulated in MATLAB and then coded for microcontroller. In other words, this code is the second stage of controller development, in which real DS18B20 sensor data has been employed.
 
-The general architecture of this MLP is as follows:<br>
+The general architecture of this controller is as follows:<br>
 1. **Error Calculation**:
    - The error between the setpoint and the actual temperature is calculated.
 
