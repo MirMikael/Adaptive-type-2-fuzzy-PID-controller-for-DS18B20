@@ -1,5 +1,5 @@
-Controller gains tuning is one of the most important parts of controller development. Gains are tuned by different algorithms. one of the popular algorithms is Fuzzy.
-This code is written for temperature control using an Adaptive type-II fuzzy - PID controller, specifically a DS18B20 sensor. It's worth mentioning that all components of the controller, have been manually implemented in this code without utilizing any pre-built functions, solely relying on fundamental commands of the C programming language. This controller was simulated in MATLAB and then coded for microcontroller. In other words, this code is the second stage of controller development, in which real DS18B20 sensor data has been employed. Note that, the fuzzy type used in this Fuzzy-PID controller is type of Mamdani fuzzy inference system.
+Controller gains tuning is one of the most important parts of controller development. Gains are tuned by different algorithms. one of the popular algorithms is <strong>Fuzzy</strong>.
+This code is written for temperature control using an <strong>Adaptive type-II fuzzy - PID</strong> controller, specifically a <strong>DS18B20</strong> sensor. It's worth mentioning that all components of the controller, have been manually implemented in this code without utilizing any pre-built functions, solely relying on fundamental commands of the <strong>C</strong> programming language. This controller was simulated in <strong>MATLAB</strong> and then coded for <strong>microcontroller</strong> (Like <strong>ST</strong> and <strong>ESP32</strong>). In other words, this code is the second stage of controller development, in which real DS18B20 sensor data has been employed. Note that, the fuzzy type used in this Fuzzy-PID controller is type of Mamdani fuzzy inference system.
 
 The general architecture of this controller is as follows:<br>
 1. **Error Calculation**:
@@ -26,5 +26,5 @@ The general architecture of this controller is as follows:<br>
 7. **Adjustment of Fuzzy Rules**:
    - The weights of the fuzzy rules are adjusted based on the error, its rate of change, and the change in output.<br>
 
-This code is written in C language, but due to the requirements of Arduino's framework, some C++ functions are used in it, but the distinctive features of C++, such as object orientation, are not present in it.<br>
-For quastions: <a href="https://mirmikael.github.io/" target="_blank">MirMikael.github.io</a>
+This code is written in <strong>C</strong> language, but due to the requirements of Arduino's framework, some <strong>C++</strong> functions are used in it, but the distinctive features of C++, such as object orientation, are not present in it.<br>
+<strong>For quastions:</strong> <a href="https://mirmikael.github.io/" target="_blank">MirMikael.github.io</a>
