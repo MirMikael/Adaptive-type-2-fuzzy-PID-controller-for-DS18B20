@@ -1,3 +1,6 @@
+// Created by Mir Mikael
+// For quastions: MirMikael.github.io
+
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #include <math.h>
