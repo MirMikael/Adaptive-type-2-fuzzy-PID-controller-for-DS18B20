@@ -74,22 +74,24 @@ void loop() {
   Serial.println(currentTime);
 
   float szu = 0.0001, szl = 0.0001;
+  float zu[11] = {1.0f}, zl{11} = {1.0f};
+
   for (int i = 0; i < 11; i++)  {
-    float zu_i = 1.0, zl_i = 1.0;
     for (int ii = 0; ii < 3; ii++) {
       //    exp(-(x - c). ^ 2. / sigmau. ^ 2);
-      a = pow((x[ii] - c[ii][i]), 2);
-      MFu[ii][i] = exp(-a / 10); //pow(sigmau, 2)=1
+      a = pow((x[ii] - c[i]), 2);
+      MFu[ii][i] = exp(-a / 1); //pow(sigmau, 2)=1
       MFl[ii][i] = exp(-a / 0.01); //pow(sigmal, 2)=0.01
-      zu_i *= MFu[ii][i];
-      zl_i *= MFl[ii][i];
+      zu[i] *= MFu[ii][i];
+      zl[i] *= MFl[ii][i];
     }
+    szu += zu[i];
+    szl += zl[i];
+  }
 
-    szu += zu_i;
-    szl += zl_i;
-
-    do_dwr[i] = zu_i / (szu + 0.0001);
-    do_dwl[i] = zl_i / (szl + 0.0001);
+for (int i = 0; i < 11; i++)  {
+    do_dwr[i] = zu[i]/ (szu + 0.0001);
+    do_dwl[i] = zl[i] / (szl + 0.0001);
 
     oup += do_dwr[i] * wu_kp[i];
     olp += do_dwl[i] * wl_kp[i];
@@ -99,7 +101,7 @@ void loop() {
 
     oud += do_dwr[i] * wu_kd[i];
     old += do_dwl[i] * wl_kd[i];
-  }
+}
 
   o_kp = (oup + olp) / 2;
   o_ki = (oui + oli) / 2;
