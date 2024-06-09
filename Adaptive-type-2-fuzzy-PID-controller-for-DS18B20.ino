@@ -74,7 +74,7 @@ void loop() {
   Serial.println(currentTime);
 
   float szu = 0.0001, szl = 0.0001;
-  float zu[11] = {1.0f}, zl{11} = {1.0f};
+  float zu[11] = {1.0f}, zl[11] = {1.0f};
 
   for (int i = 0; i < 11; i++)  {
     for (int ii = 0; ii < 3; ii++) {
